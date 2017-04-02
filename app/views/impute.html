@@ -1,15 +1,21 @@
-<div class="jumbotron">
-	<h1>'Imputations!</h1>
-	<p class="lead">
-		<i class="fa fa-clock-o"></i> + <i class="fa fa-calendar"></i><br>
-		Welcome to the imputation application
-	</p>
-	<p><a class="btn btn-lg btn-success" ng-href="#!/impute">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div ng-controller="ImputeCtrl as appCtrl" class='gridListdemoBasicUsage' ng-cloak>
+  <md-grid-list
+		md-cols-xs="1" md-cols-sm="7" md-cols-md="7" md-cols-gt-md="7"
+		md-row-height-gt-md="1:1" md-row-height="1:1"
+		md-gutter="12px" md-gutter-gt-sm="8px" >
 
-<div class="row marketing">
-	<h4>Imputation application</h4>
-	<p>
-		This application allows you to enter your worktime for each of your missions / clients. This also allows you to share your stats and have a dashboard of your (team)work!
-	</p>
+		<md-grid-tile class="blue" ng-repeat="day in weekDays"
+		md-rowspan="1" md-colspan="1">
+			{{day}}
+		</md-grid-tile>
+
+		<md-grid-tile class="gray" ng-repeat="day in weekDays"
+		md-rowspan="2" md-colspan="1">
+		</md-grid-tile>
+
+		<md-grid-tile class="gray" ng-repeat="day in weekDays"
+		md-rowspan="2" md-colspan="1">
+		</md-grid-tile>
+
+  </md-grid-list>
 </div>

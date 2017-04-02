@@ -11,14 +11,20 @@ angular.module('imputationApp').controller('HeaderCtrl', ['$scope', '$location',
 	function ($scope, $location, $timeout) {
 
 		$scope.$on('$routeChangeStart', function(next, current) {
-			$('.nav .active').removeClass('active');
 			var path = $location.path();
 			path = path.substr(1, path.length-1);
-			$('#header_'+path).addClass('active');
+			$scope.currentNavItem = path;
 		});
 
-		$scope.init=function() {
+		$scope.goto = function(page){
+			$location.path(page);
+		}
 
+		$scope.init=function(){
+			/*var path = $location.path();
+			path = path.substr(1, path.length-1);
+			$scope.currentNavItem = path;
+			console.log($scope.currentNavItem)*/
 		}
 		$scope.init();
 

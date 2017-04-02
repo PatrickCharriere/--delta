@@ -8,10 +8,11 @@
  * Controller of the imputationApp
  */
 angular.module('imputationApp')
-  .controller('ImputeCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('ImputeCtrl', ['$scope', function($scope) {
+	
+	$scope.init = function(){
+		$scope.weekDays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+	}
+	$scope.init();
+
+  }]);
