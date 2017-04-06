@@ -1,21 +1,30 @@
-<div ng-controller="ImputeCtrl as appCtrl" class='gridListdemoBasicUsage' ng-cloak>
-  <md-grid-list
-		md-cols-xs="1" md-cols-sm="7" md-cols-md="7" md-cols-gt-md="7"
-		md-row-height-gt-md="1:1" md-row-height="1:1"
-		md-gutter="12px" md-gutter-gt-sm="8px" >
+<div class='cl-page' ng-cloak>
+	<div class="cl-form-container">
+		<div class="cl-form">
+			<div class="cl-row">
+				<div class="cl-column-third">
+					<div class="cl-column-half">Year</div> <div class="cl-column-half">2017</div>
+				</div>
+				<div class="cl-column-third">
+					<div>Week</div> <div>14</div>
+					</div>
+				<div class="cl-column-third">
+					<div>7 Days</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<md-grid-tile class="blue" ng-repeat="day in weekDays"
-		md-rowspan="1" md-colspan="1">
-			{{day}}
-		</md-grid-tile>
-
-		<md-grid-tile class="gray" ng-repeat="day in weekDays"
-		md-rowspan="2" md-colspan="1">
-		</md-grid-tile>
-
-		<md-grid-tile class="gray" ng-repeat="day in weekDays"
-		md-rowspan="2" md-colspan="1">
-		</md-grid-tile>
-
-  </md-grid-list>
+	<div class="cl-container">
+		<div class="cl-calendar">
+			<div class="cl-head">
+				<div class="cl-column-seventh" ng-repeat="day in weekDays">{{day}}</div>
+			</div>
+			<div class="cl-body">
+				<dir class="cl-row">
+					<div class="cl-column-seventh" ng-repeat="day in weekDays"></div>
+				</dir>
+			</div>
+		</div>
+	</div>
 </div>

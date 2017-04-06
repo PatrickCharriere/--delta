@@ -21,30 +21,44 @@
 		<!--[if lte IE 8]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div ng-controller="HeaderCtrl as header" ng-cloak>
-			<md-content class="md-padding">
-				<md-nav-bar
-					md-selected-nav-item="currentNavItem"
-					nav-bar-aria-label="navigation links">
-					<md-nav-item md-nav-click="goto('Home')" name="home">
-						Home
-					</md-nav-item>
-					<md-nav-item md-nav-click="goto('impute')" name="impute">
-						Impute
-					</md-nav-item>
-					<md-nav-item md-nav-click="goto('dashboard')" name="dashboard">
-						Dashboard
-					</md-nav-item>
-					<md-nav-item md-nav-click="goto('about')" name="about">
-						About
-					</md-nav-item>
-				</md-nav-bar>
-			</md-content>
-		</div>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div ng-controller="HeaderCtrl as header" ng-cloak>
+					<md-content class="md-padding">
+					
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="#">Imputation</a>
+						</div>
 
-		<div class="container">
+					
+						<md-nav-bar
+							md-selected-nav-item="currentNavItem"
+							nav-bar-aria-label="navigation links">
+							<md-nav-item md-nav-click="goto('Home')" name="home">
+								Home
+							</md-nav-item>
+							<md-nav-item md-nav-click="goto('impute')" name="impute">
+								Impute
+							</md-nav-item>
+							<md-nav-item md-nav-click="goto('dashboard')" name="dashboard">
+								Dashboard
+							</md-nav-item>
+							<md-nav-item md-nav-click="goto('about')" name="about">
+								About
+							</md-nav-item>
+						</md-nav-bar>
+					</md-content>
+				</div>
+			</div>
+		</nav>
+
 		<div ng-view=""></div>
-		</div>
 
 		<div class="footer">
 			<div class="container">
