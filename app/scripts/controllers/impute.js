@@ -8,8 +8,11 @@
  * Controller of the imputationApp
  */
 angular.module('imputationApp')
-  .controller('ImputeCtrl', ['$scope', function($scope) {
-	
+  .controller('ImputeCtrl', ['$scope','$timeout','safeApply',
+  	function($scope,$timeout,safeApply) {
+	$scope.months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+	$scope.fullMonths=['January','February','March','April','May','June','July','August','September','Octocber','November','December'];
+
   	$scope.companyList=[
   	{
   		name:"Ingenico",
@@ -24,21 +27,41 @@ angular.module('imputationApp')
   	}
   	]
 
-  	$scope.createYearSelector=function(){
+  	$scope.updateCalendarVars=function(){
   		var date = new Date();
-  		var year = date.getFullYear();
-  		$scope.years = [];
-  		for(var i = year-10; i <= year; i++) {
-  			$scope.years.push(i);
+  		$scope.year = date.getFullYear();
+  		$scope.currentWeekDayNumber = date.getDay();
+  		$scope.beginWeekDayNumber = date.getDate()-$scope.currentWeekDayNumber+1;
+  		$scope.endWeekDayNumber = date.getDate()+$scope.numberOfDaysInWeek-$scope.currentWeekDayNumber;
+  		$scope.month = date.getMonth();
+  	}
+
+  	$scope.toggleNumberOfDaysInWeek=function(){
+  		if(7 === $scope.numberOfDaysInWeek){
+  			$scope.numberOfDaysInWeek = 5;
+			$scope.weekDays = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
+			safeApply($scope);
+			$( ".cl-column-seventh").each(function(){
+				$(this).removeClass("cl-column-seventh");
+				$(this).addClass("cl-column-fifth");
+			});
+  		}else{
+  			$scope.numberOfDaysInWeek = 7;
+			$scope.weekDays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+			safeApply($scope);
+			$( ".cl-column-fifth").each(function(){
+				$(this).removeClass("cl-column-fifth");
+				$(this).addClass("cl-column-seventh");
+			});
   		}
-  		console.log($scope.years)
+		$scope.updateCalendarVars();
   	}
 
 	$scope.init = function(){
-		
 		$scope.weekDays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-		
-		$scope.createYearSelector();
+		$scope.numberOfDaysInWeek = 7;
+
+		$scope.updateCalendarVars();
 
 	}
 	$scope.init();

@@ -1,15 +1,9 @@
 <div class='cl-page' ng-cloak>
 	<div class="cl-form-container">
 		<div class="cl-form">
-			<div class="cl-row">
-				<div class="cl-column-third">
-					<div class="cl-column-half">Year</div> <div class="cl-column-half">2017</div>
-				</div>
-				<div class="cl-column-third">
-					<div>Week</div> <div>14</div>
-					</div>
-				<div class="cl-column-third">
-					<div>7 Days</div>
+			<div class="row">
+				<div class="col-xs-offset-3 col-xs-6">
+					{{beginWeekDayNumber}} - {{endWeekDayNumber}} {{months[month]}} {{year}}
 				</div>
 			</div>
 		</div>
@@ -25,6 +19,12 @@
 					<div class="cl-column-seventh" ng-repeat="day in weekDays"></div>
 				</dir>
 			</div>
+		</div>
+	</div>
+
+	<div class="row cl-number-weekdays">
+		<div class="col-xs-offset-9 col-xs-2" ng-click="toggleNumberOfDaysInWeek()">
+			{{numberOfDaysInWeek}} Days
 		</div>
 	</div>
 </div>
