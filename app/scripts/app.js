@@ -35,7 +35,18 @@ angularApp.factory('safeApply', ['$rootScope',function($rootScope) {
 
 
 
-angularApp.config(function ($routeProvider) {
+angularApp.config(function ($routeProvider,$mdThemingProvider) {
+	$mdThemingProvider.theme('default')
+	.primaryPalette('indigo', {
+		'default': '400',
+		'hue-1': '100',
+		'hue-2': '600',
+		'hue-3': 'A100'
+	})
+	.accentPalette('amber')
+	.warnPalette('red')
+	.backgroundPalette('grey');
+
 	$routeProvider
 		.when('/home', {
 			templateUrl: 'views/main.html',

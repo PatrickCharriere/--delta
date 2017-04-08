@@ -4,15 +4,11 @@ html, body {
 }
 
 body {
-	padding-top: 70px;
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-	
+.brand{
+	text-align: left;
+	font-size: 25px;
 }
-
-
 
 /******* Calendar ******/
 .cl-page {

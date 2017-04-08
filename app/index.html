@@ -21,52 +21,70 @@
 		<!--[if lte IE 8]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<div ng-controller="HeaderCtrl as header" ng-cloak>
-					<md-content class="md-padding">
-					
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="#">Imputation</a>
+		
+
+		<div ng-cloak>
+			<div ng-controller="HeaderCtrl">
+				<md-toolbar layout="row" layout-align="center end" class="md-tall">
+					<div flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="column">
+						
+						<div layout="row">
+							<span flex>&nbsp;</span>
 						</div>
 
-					
-						<md-nav-bar
-							md-selected-nav-item="currentNavItem"
-							nav-bar-aria-label="navigation links">
-							<md-nav-item md-nav-click="goto('Home')" name="home">
-								Home
-							</md-nav-item>
-							<md-nav-item md-nav-click="goto('impute')" name="impute">
-								Impute
-							</md-nav-item>
-							<md-nav-item md-nav-click="goto('dashboard')" name="dashboard">
-								Dashboard
-							</md-nav-item>
-							<md-nav-item md-nav-click="goto('about')" name="about">
-								About
-							</md-nav-item>
-						</md-nav-bar>
-					</md-content>
+						<div layout="row">
+							<div class="brand" flex="40">Imputation Application</div>
+							<span flex class="flex"></span>
+							<div flex="30" layout="row" layout-align="end center">
+								<md-button class="md-accent">Sign in</md-button>
+								<md-button>Sign up</md-button>
+							</div>
+						</div>
+						
+						<div layout="row">
+							<span flex>&nbsp;</span>
+						</div>
+
+						<md-tabs md-selected="currentTab" md-stretch-tabs="always" class="md-primary md-hue-2">
+							<md-tab id="tab1" aria-controls="Tab 1" md-on-select="goto('Home')">
+								<md-tab-label><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</md-tab-label>
+							</md-tab>
+								<md-tab id="tab2" aria-controls="Tab 2" md-on-select="goto('impute')">
+								<md-tab-label><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Imputation</md-tab-label>
+							</md-tab>
+							</md-tab>
+								<md-tab id="tab2" aria-controls="Tab 2" md-on-select="goto('dashboard')">
+								<md-tab-label><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Dashboard</md-tab-label>
+							</md-tab>
+							</md-tab>
+								<md-tab id="tab2" aria-controls="Tab 2" md-on-select="goto('about')">
+								<md-tab-label><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> About</md-tab-label>
+							</md-tab>
+						</md-tabs>
+					</div>
+				</md-toolbar>
+
+			</div>
+
+			<md-content layout="column" class="md-tall">
+				<div layout="row" layout-align="center end" class="md-tall">
+					<div flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="row">
+						<div flex="20">
+							SideNav
+						</div>
+						<div flex="80" ng-view=""></div>
+					</div>
 				</div>
-			</div>
-		</nav>
 
-		<div ng-view=""></div>
+				<div layout="row" layout-align="center end" class="md-tall">
+					<div flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="row">
+						<p flex="100">Made with  <span class="glyphicon glyphicon-heart"></span> by Kitépat</p>
+					</div>
+				</div>
 
-		<div class="footer">
-			<div class="container">
-				<p>Made with  <span class="glyphicon glyphicon-heart"></span> by Kitépat</p>
-			</div>
+			</md-content>
 		</div>
-
-
+		
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 		 <!--<script>
 			 !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){

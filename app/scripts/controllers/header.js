@@ -7,8 +7,8 @@
  * # HeaderCtrl
  * Controller of the imputationApp
  */
-angular.module('imputationApp').controller('HeaderCtrl', ['$scope', '$location', '$timeout',
-	function ($scope, $location, $timeout) {
+angular.module('imputationApp').controller('HeaderCtrl', ['$scope', '$location', '$timeout','$log',
+	function ($scope, $location, $timeout,$log) {
 
 		$scope.$on('$routeChangeStart', function(next, current) {
 			var path = $location.path();
@@ -25,9 +25,10 @@ angular.module('imputationApp').controller('HeaderCtrl', ['$scope', '$location',
 			path = path.substr(1, path.length-1);
 			$scope.currentNavItem = path;
 			console.log($scope.currentNavItem)*/
+			
 		}
 		$scope.init();
 
 }]);
 
-  //class="active"
+	//class="active"
