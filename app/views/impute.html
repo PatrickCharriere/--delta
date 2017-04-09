@@ -1,15 +1,30 @@
-<div class="jumbotron">
-	<h1>'Imputations!</h1>
-	<p class="lead">
-		<i class="fa fa-clock-o"></i> + <i class="fa fa-calendar"></i><br>
-		Welcome to the imputation application
-	</p>
-	<p><a class="btn btn-lg btn-success" ng-href="#!/impute">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class='cl-page' ng-cloak>
+	<div class="cl-form-container">
+		<div class="cl-form">
+			<div class="row">
+				<div class="col-xs-offset-3 col-xs-6">
+					<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{beginWeekDayNumber}} - {{endWeekDayNumber}} {{months[month]}} {{year}}
+				</div>
+			</div>
+		</div>
+	</div>
 
-<div class="row marketing">
-	<h4>Imputation application</h4>
-	<p>
-		This application allows you to enter your worktime for each of your missions / clients. This also allows you to share your stats and have a dashboard of your (team)work!
-	</p>
+	<div class="cl-container">
+		<div class="cl-calendar">
+			<div class="cl-head">
+				<div class="cl-column-seventh" ng-repeat="day in weekDays">{{day}}</div>
+			</div>
+			<div class="cl-body">
+				<dir class="cl-row">
+					<div class="cl-column-seventh" ng-repeat="day in weekDays"></div>
+				</dir>
+			</div>
+		</div>
+	</div>
+
+	<div class="row cl-number-weekdays">
+		<div class="col-xs-offset-9 col-xs-2" ng-click="toggleNumberOfDaysInWeek()">
+			{{numberOfDaysInWeek}} Days
+		</div>
+	</div>
 </div>
