@@ -22,43 +22,33 @@
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		
-
 		<div ng-cloak>
 			<div ng-controller="HeaderCtrl">
-				<md-toolbar layout="row" layout-align="center end" class="md-tall">
-					<div flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="column">
+				<md-toolbar layout="row" layout-align="start">
+					<div flex flex-sm="100" flex-gt-sm="100" flex-gt-md="100" layout="column">
 						
 						<div layout="row">
 							<span flex>&nbsp;</span>
 						</div>
 
-						<div layout="row">
-							<div class="brand" flex="40">Imputation Application</div>
-							<span flex class="flex"></span>
-							<div flex="30" layout="row" layout-align="end center">
-								<md-button class="md-accent">Sign in</md-button>
-								<md-button>Sign up</md-button>
+						<div layout="row" layout-align="center end">
+							<div layout="row" flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60"  class="brand-line">
+								<div class="brand" flex="60">∆ Delt'ime</div>
+								<span flex class="flex"></span>
+								<div flex="30" layout="row" layout-align="end center">
+									<md-button class="md-accent">Sign in</md-button>
+									<md-button>Sign up</md-button>
+								</div>
 							</div>
 						</div>
-						
+
 						<div layout="row">
 							<span flex>&nbsp;</span>
 						</div>
 
-						<md-tabs md-selected="currentTab" md-stretch-tabs="always" class="md-primary md-hue-2">
-							<md-tab id="tab1" aria-controls="Tab 1" md-on-select="goto('Home')">
-								<md-tab-label><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</md-tab-label>
-							</md-tab>
-								<md-tab id="tab2" aria-controls="Tab 2" md-on-select="goto('impute')">
-								<md-tab-label><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Imputation</md-tab-label>
-							</md-tab>
-							</md-tab>
-								<md-tab id="tab2" aria-controls="Tab 2" md-on-select="goto('dashboard')">
-								<md-tab-label><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Dashboard</md-tab-label>
-							</md-tab>
-							</md-tab>
-								<md-tab id="tab2" aria-controls="Tab 2" md-on-select="goto('about')">
-								<md-tab-label><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> About</md-tab-label>
+						<md-tabs flex flex="70" md-selected="selectedTab" class="md-hue-2 md-primary">
+							<md-tab ng-repeat="view in views" id="view.name" aria-controls="view.name" md-on-select="goto(view.name)">
+								<md-tab-label><span class="glyphicon {{view.glyph}}" aria-hidden="true"></span> {{view.name}}</md-tab-label>
 							</md-tab>
 						</md-tabs>
 					</div>
@@ -67,7 +57,8 @@
 			</div>
 
 			<md-content layout="column" class="md-tall">
-				<div layout="row" layout-align="center end" class="md-tall">
+
+				<div layout="row" layout-align="center end">
 					<div flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="row">
 						<div flex="20">
 							SideNav
@@ -76,7 +67,7 @@
 					</div>
 				</div>
 
-				<div layout="row" layout-align="center end" class="md-tall">
+				<div layout="row" layout-align="center end">
 					<div flex flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="row">
 						<p flex="100">Made with  <span class="glyphicon glyphicon-heart"></span> by Kitépat</p>
 					</div>
@@ -112,10 +103,11 @@
 				<!-- build:js({.tmp,app}) scripts/scripts.js -->
 				<script src="scripts/app.js"></script>
 				<script src="scripts/controllers/main.js"></script>
-				<script src="scripts/controllers/about.js"></script>
-				<script src="scripts/controllers/impute.js"></script>
 				<script src="scripts/controllers/header.js"></script>
+				<script src="scripts/controllers/impute.js"></script>
 				<script src="scripts/controllers/dashboard.js"></script>
+				<script src="scripts/controllers/settings.js"></script>
+				<script src="scripts/controllers/about.js"></script>
 				<!-- endbuild -->
 </body>
 </html>

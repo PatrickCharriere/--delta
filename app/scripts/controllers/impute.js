@@ -31,7 +31,9 @@ angular.module('imputationApp')
   		var date = new Date();
   		$scope.year = date.getFullYear();
   		$scope.currentWeekDayNumber = date.getDay();
-  		$scope.beginWeekDayNumber = date.getDate()-$scope.currentWeekDayNumber+1;
+  		if(0===$scope.currentWeekDayNumber)
+  			$scope.currentWeekDayNumber=7
+  		$scope.beginWeekDayNumber = date.getDate()-$scope.currentWeekDayNumber;
   		$scope.endWeekDayNumber = date.getDate()+$scope.numberOfDaysInWeek-$scope.currentWeekDayNumber;
   		$scope.month = date.getMonth();
   	}

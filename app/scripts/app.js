@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 var angularApp = angular.module('imputationApp', [
-	'ngRoute', 'ngMaterial'
+	'ngRoute', 'ngMaterial', 'ngMessages'
 ]);
 
 angularApp.factory('safeApply', ['$rootScope',function($rootScope) {
@@ -36,15 +36,18 @@ angularApp.factory('safeApply', ['$rootScope',function($rootScope) {
 
 
 angularApp.config(function ($routeProvider,$mdThemingProvider) {
+	$mdThemingProvider.theme('dark-grey')
+	.backgroundPalette('grey')
+	.dark();
 	$mdThemingProvider.theme('default')
 	.primaryPalette('indigo', {
-		'default': '400',
-		'hue-1': '100',
-		'hue-2': '600',
+		'default': '500',
+		'hue-1': '400',
+		'hue-2': '800',
 		'hue-3': 'A100'
 	})
-	.accentPalette('amber')
-	.warnPalette('red')
+	.accentPalette('orange')
+	.warnPalette('deep-orange')
 	.backgroundPalette('grey');
 
 	$routeProvider
@@ -53,7 +56,7 @@ angularApp.config(function ($routeProvider,$mdThemingProvider) {
 			controller: 'MainCtrl',
 			controllerAs: 'main'
 		})
-		.when('/impute', {
+		.when('/imputation', {
 			templateUrl: 'views/impute.html',
 			controller: 'ImputeCtrl',
 			controllerAs: 'impute'
@@ -62,6 +65,11 @@ angularApp.config(function ($routeProvider,$mdThemingProvider) {
 			templateUrl: 'views/dashboard.html',
 			controller: 'DashboardCtrl',
 			controllerAs: 'dashboard'
+		})
+		.when('/settings', {
+			templateUrl: 'views/settings.html',
+			controller: 'SettingsCtrl',
+			controllerAs: 'settings'
 		})
 		.when('/about', {
 			templateUrl: 'views/about.html',
