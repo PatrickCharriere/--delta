@@ -57,73 +57,41 @@
 
 			<md-content layout="column" flex="flex">
 				<div layout="column" flex="flex">
-					<div flex="none" layout-padding="layout-padding" layout="row" layout-align="center">
-						<div flex-sm="100" flex-gt-sm="80" flex-gt-md="60" >
+					<div flex="none" layout-padding layout="row" layout-align="center">
+						<div flex-sm="100" flex-gt-sm="80" flex-gt-md="60">
 							<div ng-view=""></div>
 						</div>
 					</div>
 					<div flex="flex"></div>
-					<md-content md-theme="dark-grey" flex="none" layout-padding>
+					<md-content class="footer" md-theme="dark-grey" flex="none" layout-padding>
 						<div flex="100" layout="row">
-							<div flex="33" layout="row">
+							<div flex="33" layout="column">
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 							</div>
-							<div flex="33" layout="row">
+							<div flex="33" layout="column">
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 							</div>
-							<div flex="33" layout="row">
+							<div flex="33" layout="column">
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 								<a href="#">Link</a>
 							</div>
 						</div>
-						<p flex="100">Made with  <span class="glyphicon glyphicon-heart"></span> by Kitépat</p>
+						<div layout="row" layout-align="center end">
+							<div flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="column" layout-align="center end">
+								<p flex style="color:rgba(255,255,255,0.15)">Made with <span class="glyphicon glyphicon-heart"></span> by Kitépat</p>
+							</div>
+						</div>
 					</md-content>
 				</div>
 			</md-content>
 		</div>
-
-
-
-		<!--<div ng-controller="HeaderCtrl" layout="column" layout-fill>
-			
-		
-
-				<md-content md-theme="dark-grey" flex="none" layout-padding>
-					<div flex-sm="100" flex-gt-sm="80" flex-gt-md="60" layout="row">
-						<div flex="100" layout="row">
-							<div flex="33" layout="row">
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-							</div>
-							<div flex="33" layout="row">
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-							</div>
-							<div flex="33" layout="row">
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-								<a href="#">Link</a>
-							</div>
-						</div>
-						<p flex="100">Made with  <span class="glyphicon glyphicon-heart"></span> by Kitépat</p>
-					</div>
-				</md-content>
-			</md-content>
-
-		</div>-->
-
-		
 
 		
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -151,14 +119,14 @@
 		<!-- endbower -->
 		<!-- endbuild -->
 
-				<!-- build:js({.tmp,app}) scripts/scripts.js -->
-				<script src="scripts/app.js"></script>
-				<script src="scripts/controllers/main.js"></script>
-				<script src="scripts/controllers/header.js"></script>
-				<script src="scripts/controllers/impute.js"></script>
-				<script src="scripts/controllers/dashboard.js"></script>
-				<script src="scripts/controllers/settings.js"></script>
-				<script src="scripts/controllers/about.js"></script>
-				<!-- endbuild -->
-</body>
+		<!-- build:js({.tmp,app}) scripts/scripts.js -->
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers/main.js"></script>
+		<script src="scripts/controllers/header.js"></script>
+		<script src="scripts/controllers/impute.js"></script>
+		<script src="scripts/controllers/dashboard.js"></script>
+		<script src="scripts/controllers/settings.js"></script>
+		<script src="scripts/controllers/about.js"></script>
+		<!-- endbuild -->
+	</body>
 </html>

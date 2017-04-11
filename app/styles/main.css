@@ -144,5 +144,9 @@ body {
 	outline: none;
 }
 
+/******* Footer ********/
+.footer a{
+	text-align: center;
+}
 
 
