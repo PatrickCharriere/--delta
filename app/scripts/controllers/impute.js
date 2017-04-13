@@ -71,6 +71,10 @@ angular.module('imputationApp')
 
 		$scope.updateCalendarVars();
 		$scope.imputation.company="";
+		$scope.imputation.category="";
+		$scope.imputation.client="";
+		$scope.imputation.mission="";
+		$scope.imputation.description="";
 		var date = new Date();
 		date.setSeconds(0);
 		date.setMilliseconds(0);

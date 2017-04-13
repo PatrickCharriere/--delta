@@ -21,36 +21,36 @@
 								<md-datepicker ng-model="imputation.date"></md-datepicker>
 							</md-input-container>
 						</div>
-						<div layout-gt-sm="row">
-							<md-input-container class="md-block" flex="50">
-								<label>From</label>
-								<input type="time" ng-model="imputation.beginTime" md-placeholder="HH:mm">
-							</md-input-container>
-							<md-input-container class="md-block" flex="50">
-								<label>To</label>
-								<input type="time" md-placeholder="HH:mm" ng-model="imputation.endTime">
-							</md-input-container>
-						</div>
-						<div layout-gt-sm="row">
-							<md-input-container class="md-block" flex="50">
+						<div layout-xs="column" layout-gt-xs="row">
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
 								<label>Category</label>
-								<input>
+								<input ng-model="imputation.category">
 							</md-input-container>
-							<md-input-container class="md-block" flex="50">
+							<div layout="row" flex-xs="100" flex-gt-xs="50">
+								<md-input-container class="md-block" flex="50">
+									<label>From</label>
+									<input type="time" ng-model="imputation.beginTime" md-placeholder="HH:mm">
+								</md-input-container>
+								<md-input-container class="md-block" flex="50">
+									<label>To</label>
+									<input type="time" md-placeholder="HH:mm" ng-model="imputation.endTime">
+								</md-input-container>
+							</div>
+						</div>
+						<div layout-gt-xs="row">
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
 								<label>Client</label>
-								<input>
+								<input ng-model="imputation.client">
 							</md-input-container>
-						</div>
-						<div layout-gt-sm="row">
-							<md-input-container class="md-block" flex="100">
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="50">
 								<label>Mission</label>
-								<input>
+								<input ng-model="imputation.mission">
 							</md-input-container>
 						</div>
-						<div layout-gt-sm="row">
-							<md-input-container class="md-block" flex="100">
+						<div layout-gt-xs="row">
+							<md-input-container class="md-block" flex-xs="100" flex-gt-xs="100">
 								<label>Description</label>
-								<input>
+								<textarea ng-model="imputation.description"></textarea>
 							</md-input-container>
 						</div>
 						<md-card-actions layout="row" layout-align="end center">

@@ -32,7 +32,7 @@
 
 					<div layout="row" layout-align="center end">
 						<div layout="row" flex flex-sm="100" flex-gt-sm="80" flex-gt-md="80"  class="brand-line">
-							<div class="brand" flex="60">∆ Delta</div>
+							<div class="brand" flex-sm="100" flex-gt-sm="60">∆ Delta</div>
 							<span flex class="flex"></span>
 							<div flex="30" layout="row" layout-align="end center">
 								<md-button class="md-accent">Sign in</md-button>
@@ -45,9 +45,9 @@
 						<span flex>&nbsp;</span>
 					</div>
 
-					<md-tabs flex flex="70" md-selected="selectedTab" class="md-hue-2 md-primary">
+					<md-tabs flex flex-xs="100" flex-gt-xs="70" layout="column" layout-fill md-selected="selectedTab" class="md-hue-2 md-primary">
 						<md-tab ng-repeat="view in views" id="view.name" aria-controls="view.name" md-on-select="goto(view.name)">
-							<md-tab-label><span class="glyphicon {{view.glyph}}" aria-hidden="true"></span> {{view.name}}</md-tab-label>
+							<md-tab-label><span class="glyphicon {{view.glyph}}" aria-hidden="true"></span> <span hide-xs>{{view.name}}</span></md-tab-label>
 						</md-tab>
 					</md-tabs>
 				</div>
