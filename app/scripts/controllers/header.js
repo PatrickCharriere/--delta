@@ -18,7 +18,7 @@ angular.module('imputationApp')
 				id: 0,
 				active: false
 			}, {
-				name: "Imputation",
+				name: "Applications",
 				glyph: "glyphicon-calendar",
 				id: 1,
 				active: false

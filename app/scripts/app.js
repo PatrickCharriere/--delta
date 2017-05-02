@@ -30,58 +30,27 @@ angularApp.factory('safeApply', ['$rootScope',function($rootScope) {
 }]);
 
 
+angularApp.directive('footer', function () {
+	return {
+		restrict: 'A', //This means that it will be used as an attribute and NOT as an element
+		replace: true,
+		templateUrl: "/scripts/directives/footer.html",
+		controller: ['$scope', '$filter', function ($scope, $filter) {
+			// Your behaviour goes here :)
+		}]
+	}
+});
 
-angularApp
-    .controller('AppCtrl', function($scope) {
-        $scope.cards = [{
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }, {
-            text: 'Bla bla bla bla bla bla bla ',
-            title: 'Bla'
-        }];
-        $scope.displayContent = true;
-        $scope.toggleContent = function(showContent) {
-            $scope.displayContent = showContent;
-        };
-    });
-
+angularApp.directive('header', function () {
+	return {
+		restrict: 'A', //This means that it will be used as an attribute and NOT as an element
+		replace: true,
+		templateUrl: "/scripts/directives/header.html",
+		controller: ['$scope', '$filter', function ($scope, $filter) {
+			// Your behaviour goes here :)
+		}]
+	}
+});
 
 
 angularApp.config(function ($routeProvider,$mdThemingProvider,$mdDateLocaleProvider) {
@@ -102,7 +71,7 @@ angularApp.config(function ($routeProvider,$mdThemingProvider,$mdDateLocaleProvi
 
 	$mdDateLocaleProvider.formatDate = function(date) {
 		return moment(date).format('DD.MM.YYYY');
-};
+	};
 
 
 	$routeProvider
@@ -111,7 +80,7 @@ angularApp.config(function ($routeProvider,$mdThemingProvider,$mdDateLocaleProvi
 		controller: 'MainCtrl',
 		controllerAs: 'main'
 	})
-	.when('/imputation', {
+	.when('/applications', {
 		templateUrl: 'views/impute.html',
 		controller: 'ImputeCtrl',
 		controllerAs: 'impute'

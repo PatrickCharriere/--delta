@@ -19,7 +19,12 @@ body {
 md-pagination-wrapper {
     width:auto !important;
 }
-
+.brand_img_container{
+	height: 80px;
+}
+.brand_img{
+	height: 100%;
+}
 /******* Calendar ******/
 .cl-page {
 	color: rgba(255,255,255,0.9);
